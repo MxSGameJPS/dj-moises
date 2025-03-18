@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { useState, useEffect } from "react";
-import Festa from "../mocks/festas.json"; // Certifique-se de que o caminho está correto
+import Festa from "../mocks/Festas.json"; // Certifique-se de que o caminho está correto
 
 // Tipo para as mídias do JSON
 type Midia = {
