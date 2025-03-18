@@ -3,24 +3,25 @@ import { GiPartyPopper } from "react-icons/gi";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoWhatsapp } from "react-icons/io";
 import styled from "styled-components";
+import { Link } from "react-router-dom"; // Adicionado para navegação interna
 
 const Nav = () => {
   return (
     <StyledWrapper>
       <ul className="example-2">
         <li className="icon-content">
-          <a data-social="spotify" aria-label="home" href="/home">
+          <Link to="/home" data-social="spotify" aria-label="home">
             <div className="filled" />
-            <IoHome size={10} />
-          </a>
+            <IoHome size={24} /> {/* Aumentei o tamanho para melhor visibilidade */}
+          </Link>
           <div className="tooltip">Home</div>
         </li>
         <li className="icon-content">
-          <a data-social="pinterest" aria-label="festas" href="/festas">
+          <Link to="/festas" data-social="pinterest" aria-label="festas">
             <div className="filled" />
-            <GiPartyPopper size={10} />
-          </a>
-          <div className="tooltip">estas</div>
+            <GiPartyPopper size={24} /> {/* Aumentei o tamanho */}
+          </Link>
+          <div className="tooltip">Festas</div> {/* Corrigi de "estas" para "Festas" */}
         </li>
         <li className="icon-content">
           <a
@@ -31,7 +32,7 @@ const Nav = () => {
             href="https://www.instagram.com/djmoises.ps"
           >
             <div className="filled" />
-            <AiFillInstagram size={10} />
+            <AiFillInstagram size={24} /> {/* Aumentei o tamanho */}
           </a>
           <div className="tooltip">Instagram</div>
         </li>
@@ -44,7 +45,7 @@ const Nav = () => {
             href="https://wa.me/5551991454337"
           >
             <div className="filled" />
-            <IoLogoWhatsapp size={10} />
+            <IoLogoWhatsapp size={24} /> {/* Aumentei o tamanho */}
           </a>
           <div className="tooltip">WhatsApp</div>
         </li>
@@ -56,22 +57,22 @@ const Nav = () => {
 const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: end; /* Mantive alinhamento à direita */
   padding: 0 70px;
-  width: 100%; /* Garante que o wrapper ocupe o espaço disponível */
+  width: 100%;
 
   ul {
     list-style: none;
-    padding: 0; /* Remove padding padrão da ul */
-    margin: 0; /* Remove margem padrão da ul */
+    padding: 0;
+    margin: 0;
   }
 
   .example-2 {
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
-    gap: 10px; /* Espaço consistente entre os ícones */
-    flex-wrap: wrap; /* Permite quebra de linha se necessário */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .example-2 .icon-content {
@@ -100,7 +101,8 @@ const StyledWrapper = styled.div`
     top: 50px;
   }
 
-  .example-2 .icon-content a {
+  .example-2 .icon-content a,
+  .example-2 .icon-content Link { /* Adicionado para suportar Link */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -112,21 +114,25 @@ const StyledWrapper = styled.div`
     color: #4d4d4d;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
+    text-decoration: none; /* Remove sublinhado padrão de links */
   }
 
-  .example-2 .icon-content a:hover {
+  .example-2 .icon-content a:hover,
+  .example-2 .icon-content Link:hover {
     box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
     color: white;
   }
 
-  .example-2 .icon-content a svg {
+  .example-2 .icon-content a svg,
+  .example-2 .icon-content Link svg {
     position: relative;
     z-index: 1;
     width: 20px;
     height: 20px;
   }
 
-  .example-2 .icon-content a .filled {
+  .example-2 .icon-content a .filled,
+  .example-2 .icon-content Link .filled {
     position: absolute;
     top: auto;
     bottom: 0;
@@ -137,16 +143,21 @@ const StyledWrapper = styled.div`
     transition: all 0.3s ease-in-out;
   }
 
-  .example-2 .icon-content a:hover .filled {
+  .example-2 .icon-content a:hover .filled,
+  .example-2 .icon-content Link:hover .filled {
     height: 100%;
   }
 
   .example-2 .icon-content a[data-social="spotify"] .filled,
-  .example-2 .icon-content a[data-social="spotify"] ~ .tooltip {
+  .example-2 .icon-content a[data-social="spotify"] ~ .tooltip,
+  .example-2 .icon-content Link[to="/home"] .filled,
+  .example-2 .icon-content Link[to="/home"] ~ .tooltip {
     background-color: #1d41b9;
   }
   .example-2 .icon-content a[data-social="pinterest"] .filled,
-  .example-2 .icon-content a[data-social="pinterest"] ~ .tooltip {
+  .example-2 .icon-content a[data-social="pinterest"] ~ .tooltip,
+  .example-2 .icon-content Link[to="/festas"] .filled,
+  .example-2 .icon-content Link[to="/festas"] ~ .tooltip {
     background-color: #99048d;
   }
   .example-2 .icon-content a[data-social="dribbble"] .filled,
@@ -158,70 +169,59 @@ const StyledWrapper = styled.div`
     background-color: #07cc00;
   }
 
-  /* Responsividade */
   @media (max-width: 768px) {
-    /* Tablets */
     padding: 0 30px;
-
     .example-2 {
       gap: 8px;
     }
-
     .example-2 .icon-content {
       margin: 0 5px;
     }
-
-    .example-2 .icon-content a {
+    .example-2 .icon-content a,
+    .example-2 .icon-content Link {
       width: 25px;
       height: 25px;
     }
-
-    .example-2 .icon-content a svg {
+    .example-2 .icon-content a svg,
+    .example-2 .icon-content Link svg {
       width: 15px;
       height: 15px;
     }
-
     .example-2 .icon-content .tooltip {
       font-size: 12px;
       padding: 4px 8px;
     }
-
     .example-2 .icon-content:hover .tooltip {
       top: 45px;
     }
   }
 
   @media (max-width: 480px) {
-    /* Celulares */
-    padding: 0; /* Ajustado para um valor mínimo */
-    width: 100%; /* Garante que ocupe toda a largura disponível */
-
+    padding: 0;
+    width: 100%;
     .example-2 {
-      gap: 15px; /* Espaço vertical maior */
-      width: 100%; /* Ocupa toda a largura do container */
-      padding: 0; /* Remove padding interno extra */
+      gap: 15px;
+      width: 100%;
+      padding: 0;
     }
-
     .example-2 .icon-content {
-      margin: 0; /* Remove margens laterais */
+      margin: 0;
     }
-
-    .example-2 .icon-content a {
+    .example-2 .icon-content a,
+    .example-2 .icon-content Link {
       width: 30px;
       height: 30px;
     }
-
-    .example-2 .icon-content a svg {
+    .example-2 .icon-content a svg,
+    .example-2 .icon-content Link svg {
       width: 20px;
       height: 20px;
     }
-
     .example-2 .icon-content .tooltip {
       top: -25px;
       font-size: 10px;
       padding: 3px 6px;
     }
-
     .example-2 .icon-content:hover .tooltip {
       top: -40px;
     }
