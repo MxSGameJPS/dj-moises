@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import EstilosGlobais from "./EstilosGlobais"
 import Abertura from "./Components/Abertura"
-import Header from './Components/Header/index';
+import Header from './Components/Header';
 import Home from "./Components/Pages/Home";
 import Festas from "./Components/Pages/Festas";
 
