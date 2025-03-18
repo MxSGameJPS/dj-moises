@@ -9,18 +9,18 @@ const Nav = () => {
     <StyledWrapper>
       <ul className="example-2">
         <li className="icon-content">
-          <a data-social="spotify" aria-label="home" href="/Home">
+          <a data-social="spotify" aria-label="home" href="/home">
             <div className="filled" />
             <IoHome size={10} />
           </a>
           <div className="tooltip">Home</div>
         </li>
         <li className="icon-content">
-          <a data-social="pinterest" aria-label="festas" href="/Festas">
+          <a data-social="pinterest" aria-label="festas" href="/festas">
             <div className="filled" />
             <GiPartyPopper size={10} />
           </a>
-          <div className="tooltip">Festas</div>
+          <div className="tooltip">estas</div>
         </li>
         <li className="icon-content">
           <a
@@ -193,7 +193,7 @@ const StyledWrapper = styled.div`
 
   @media (max-width: 480px) {
     /* Celulares */
-    padding: 0 ; /* Ajustado para um valor mínimo */
+    padding: 0; /* Ajustado para um valor mínimo */
     width: 100%; /* Garante que ocupe toda a largura disponível */
 
     .example-2 {
