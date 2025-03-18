@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import EstilosGlobais from "./EstilosGlobais"
 import Abertura from "./Components/Abertura"
 import Header from './Components/Header/index';
