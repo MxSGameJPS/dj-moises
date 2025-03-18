@@ -1,0 +1,40 @@
+{
+    "midias": [
+      {
+        "tipo": "foto",
+        "nome": "foto1",
+        "caminho": "/img/foto1.jpg",
+        "alt": "Foto 1 da festa"
+      },
+      {
+        "tipo": "foto",
+        "nome": "foto2",
+        "caminho": "/img/foto2.jpg",
+        "alt": "Foto 2 da festa"
+      },
+      {
+        "tipo": "foto",
+        "nome": "foto3",
+        "caminho": "/img/foto3.jpg",
+        "alt": "Foto 3 da festa"
+      },
+      {
+        "tipo": "video",
+        "nome": "video1",
+        "caminho": "/videos/video1.mp4",
+        "tipoArquivo": "video/mp4"
+      },
+      {
+        "tipo": "video",
+        "nome": "video2",
+        "caminho": "/videos/video2.mp4",
+        "tipoArquivo": "video/mp4"
+      },
+      {
+        "tipo": "video",
+        "nome": "video3",
+        "caminho": "/videos/video3.mp4",
+        "tipoArquivo": "video/mp4"
+      }
+    ]
+  }
