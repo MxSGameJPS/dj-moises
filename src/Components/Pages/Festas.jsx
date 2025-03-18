@@ -1,5 +1,9 @@
+import Eventos from "../CardFestas/indes";
+
 export default function Festas() {
     return (
-        <div>Festas</div>
+        <>
+            <Eventos />   
+        </>
     )
 }
