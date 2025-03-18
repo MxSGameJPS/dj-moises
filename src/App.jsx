@@ -3,7 +3,7 @@ import EstilosGlobais from "./EstilosGlobais"
 import Abertura from "./Components/Abertura"
 import Header from './Components/Header';
 import Home from "./Components/Pages/Home";
-import Festas from "./Components/Pages/Festas";
+import Festas from "./Components/Pages/Festas.jsx";
 
 function App() {
  
