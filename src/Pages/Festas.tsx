@@ -1,10 +1,10 @@
 import styled, { keyframes } from "styled-components";
 import { useState, useEffect } from "react";
-import Festa from "../mocks/festas.json"; // Ajuste o caminho conforme necessário
+import Festa from "../mocks/festas.json"; // Certifique-se de que o caminho está correto
 
 // Tipo para as mídias do JSON
 type Midia = {
-    tipo: "foto" | "video";
+    tipo: string;
     nome: string;
     caminho: string;
     alt?: string;
@@ -22,7 +22,6 @@ export default function Festas() {
         setSelectedMidia(null);
     };
 
-    // Fechar o modal com a tecla "Esc"
     useEffect(() => {
         const handleEsc = (event: KeyboardEvent) => {
             if (event.key === "Escape") closeModal();
@@ -34,7 +33,7 @@ export default function Festas() {
     return (
         <Container>
             <Galeria>
-                {Festa.midias.map((midia, index) => (
+                {Festa.midias.map((midia: Midia, index: number) => (
                     <Item key={index} onClick={() => openModal(midia)}>
                         {midia.tipo === "foto" ? (
                             <Imagem src={midia.caminho} alt={midia.alt} />
@@ -60,10 +59,10 @@ export default function Festas() {
                             </ModalVideo>
                         )}
                         <CloseButton onClick={closeModal}>✖</CloseButton>
-                    </ModalContent>
-                </ModalOverlay>
-            )}
-        </Container>
+                        </ModalContent>
+                    </ModalOverlay>
+                )}
+            </Container>
     );
 }
 
@@ -74,16 +73,11 @@ const Container = styled.div`
     min-height: 100vh;
     background-color: #000000;
     padding: 20px;
-    
-    @media (max-width: 768px) {
-        padding: 15px;
-    }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         padding: 10px;
     }
-
-    @media (max-width: 320px) {
+    @media (max-width: 480px) {
         padding: 5px;
     }
 `;
@@ -100,17 +94,17 @@ const Galeria = styled.div`
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
     @media (max-width: 768px) {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
         padding: 15px;
     }
     @media (max-width: 480px) {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
         padding: 10px;
         border-radius: 10px;
-        max-width: 400px;
-        width:80%; 
+        max-width: 100%;
+        margin-top: 20px;
     }
 `;
 
@@ -119,7 +113,7 @@ const Item = styled.div`
     border-radius: 10px;
     transition: transform 0.3s ease;
     cursor: pointer;
-    height: 200px; /* Altura fixa para uniformidade */
+    height: 200px;
 
     &:hover {
         transform: scale(1.05);
@@ -127,10 +121,10 @@ const Item = styled.div`
     }
 
     @media (max-width: 768px) {
-        height: 150px; /* Altura reduzida em tablets */
+        height: 150px;
     }
     @media (max-width: 480px) {
-        height: 100px; /* Ainda menor em celulares */
+        height: 200px;
     }
 `;
 
@@ -148,7 +142,6 @@ const Video = styled.video`
     display: block;
 `;
 
-// Animação de fade-in para o modal
 const fadeIn = keyframes`
     from {
         opacity: 0;
@@ -185,13 +178,13 @@ const ModalContent = styled.div`
     align-items: center;
 
     @media (max-width: 768px) {
-        max-width: 95%; /* Mais largo em tablets */
+        max-width: 95%;
         padding: 15px;
     }
     @media (max-width: 480px) {
-        max-width: 100%; /* Usa toda a largura em celulares */
+        max-width: 100%;
         padding: 10px;
-        border-radius: 5px; /* Bordas menores */
+        border-radius: 5px;
     }
 `;
 
@@ -201,7 +194,7 @@ const ModalImagem = styled.img`
     object-fit: contain;
 
     @media (max-width: 480px) {
-        max-height: 70vh; /* Menos altura em celulares */
+        max-height: 80%;
     }
 `;
 
@@ -211,7 +204,7 @@ const ModalVideo = styled.video`
     object-fit: contain;
 
     @media (max-width: 480px) {
-        max-height: 70vh; /* Menos altura em celulares */
+        max-height: 70vh;
     }
 `;
 
@@ -231,7 +224,7 @@ const CloseButton = styled.button`
     }
 
     @media (max-width: 480px) {
-        font-size: 20px; /* Botão menor em celulares */
+        font-size: 20px;
         top: 5px;
         right: 5px;
     }
