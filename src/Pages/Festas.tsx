@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { useState, useEffect } from "react";
-import Festa from "../mocks/Festas.json"; // Certifique-se de que o caminho está correto
 
 // Tipo para as mídias do JSON
 type Midia = {
@@ -13,6 +12,15 @@ type Midia = {
 
 export default function Festas() {
     const [selectedMidia, setSelectedMidia] = useState<Midia | null>(null);
+    const [midias, setMidias] = useState<Midia[]>([]); // Estado para armazenar as mídias
+
+    // Carrega o Festas.json via fetch
+    useEffect(() => {
+        fetch("/Festas.json")
+            .then((response) => response.json())
+            .then((data) => setMidias(data.midias))
+            .catch((error) => console.error("Erro ao carregar Festas.json:", error));
+    }, []);
 
     const openModal = (midia: Midia) => {
         setSelectedMidia(midia);
@@ -33,7 +41,7 @@ export default function Festas() {
     return (
         <Container>
             <Galeria>
-                {Festa.midias.map((midia: Midia, index: number) => (
+                {midias.map((midia: Midia, index: number) => (
                     <Item key={index} onClick={() => openModal(midia)}>
                         {midia.tipo === "foto" ? (
                             <Imagem src={midia.caminho} alt={midia.alt} />
@@ -59,10 +67,10 @@ export default function Festas() {
                             </ModalVideo>
                         )}
                         <CloseButton onClick={closeModal}>✖</CloseButton>
-                        </ModalContent>
-                    </ModalOverlay>
-                )}
-            </Container>
+                    </ModalContent>
+                </ModalOverlay>
+            )}
+        </Container>
     );
 }
 
