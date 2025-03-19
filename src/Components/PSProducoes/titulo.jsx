@@ -62,7 +62,7 @@ const StyledWrapper = styled.div`
 
   @media (max-width: 320px) {
     font-size: 10px;
-    text-align: center;  }  
+    text-align: center;   
   }  
 `;
 
