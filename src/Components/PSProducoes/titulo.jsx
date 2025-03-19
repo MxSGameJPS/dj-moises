@@ -49,6 +49,18 @@ const StyledWrapper = styled.div`
       background-position: 600px;
     }
   }
+
+  @media (max-width: 768px) {
+    font-size: 3em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2em;  
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1.5em;  
+  }  
 `;
 
 export default Titulo;
