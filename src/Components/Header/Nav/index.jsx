@@ -3,7 +3,8 @@ import { GiPartyPopper } from "react-icons/gi";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoWhatsapp } from "react-icons/io";
 import styled from "styled-components";
-import { Link } from "react-router-dom"; // Adicionado para navegação interna
+import { Link } from "react-router-dom";
+import { PiCheers } from "react-icons/pi"; // Adicionado para navegação interna
 
 const Nav = () => {
   return (
@@ -22,6 +23,13 @@ const Nav = () => {
             <GiPartyPopper size={24} /> {/* Aumentei o tamanho */}
           </Link>
           <div className="tooltip">Festas</div> {/* Corrigi de "estas" para "Festas" */}
+        </li>
+        <li className="icon-content">
+          <Link to="/producoes" data-social="pinterest" aria-label="festas">
+            <div className="filled" />
+            <PiCheers size={24} /> {/* Aumentei o tamanho */}
+          </Link>
+          <div className="tooltip">Produções de eventos</div> {/* Corrigi de "estas" para "Festas" */}
         </li>
         <li className="icon-content">
           <a

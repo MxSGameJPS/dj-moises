@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export default function Botao({ children }) {
+export default function Botao({ children, href  }) {
     return (
-        <BotaoStyles className="botao">{children}</BotaoStyles>
+        <BotaoStyles className="botao">
+            <a target="_blank"
+            rel="noopener noreferrer"
+            href={href}>{children}</a> 
+        </BotaoStyles>
     )
 } 
 
@@ -19,6 +23,11 @@ const BotaoStyles = styled.button`
 
     &:hover {
         color: #000;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
     }
 
     @media (max-width: 768px) {
