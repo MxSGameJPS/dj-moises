@@ -114,6 +114,7 @@ const CarouselContainer = styled.div`
   padding: 20px;
   color: #ffffff;
   position: relative;
+  padding: 20px;
 
   .title {
     font-size: 2rem;
@@ -138,9 +139,24 @@ const CarouselInner = styled.div`
     0% {
       transform: translateX(0);
     }
+    50% {
+      transform: translateX(-50%); /* Move pra esquerda metade da largura total */
+    }
     100% {
       transform: translateX(-100%); /* Move pra esquerda a largura total */
     }
+
+    
+  }
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 468px) {
+    min-width: 300px;
+    width: 300px;
+    height: 200px;
   }
 `;
 
@@ -177,6 +193,26 @@ const ImageCardStyled = styled.div`
         props.adjustPosition ? "center 30%" : "center center"}; /* Mantém o ajuste em telas menores */
     }
   }
+  @media (max-width: 480px) {
+    min-width: 300px;
+    width: 300px;
+    height: 200px;
+
+    .hotel-image {
+      object-position: ${(props) =>
+        props.adjustPosition ? "center 15%" : "center center"}; /* Mantém o ajuste em telas menores */
+    }
+  }
+  @media (max-width: 320px) {
+    min-width: 300px;
+    width: 300px;
+    height: 200px;
+
+    .hotel-image {
+      object-position: ${(props) =>
+        props.adjustPosition ? "center 10%" : "center center"}; /* Mantém o ajuste em telas menores */
+    }
+  }
 `;
 
 const PopupOverlay = styled.div`
@@ -190,13 +226,32 @@ const PopupOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  @media (max-width: 480px) {
+    width: 450px;
+    max-height: 100vh;
+    left: -1%;
+    top: 10%;
+  }
+
+  @media (max-width: 320px) {
+    width: 300px;
+    max-height: 100vh;
+    left: -10%;
+    top: 15%;
+}
 `;
+
 
 const PopupContent = styled.div`
   position: relative;
   max-width: 90%;
   max-height: 90vh;
-  overflow: auto;
+  overflow: hidden;
 `;
 
 const PopupImage = styled.img`

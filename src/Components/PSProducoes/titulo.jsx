@@ -11,6 +11,7 @@ const Titulo = () => {
 
 const StyledWrapper = styled.div`
   .shine {
+    text-align: center;
     font-size: 4em;
     font-weight: 900;
     color: rgba(194, 0, 253, 0.3);
