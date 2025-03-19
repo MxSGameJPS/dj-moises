@@ -21,4 +21,19 @@ const ContainerDobraDois = styled.section`
     box-sizing: border-box;
     overflow-y: auto; /* Permite rolagem vertical se os cards excederem a altura */
     background: linear-gradient(45deg, #000000, #520096);
+
+
+     /* Animação da faixa */
+     animation: faixa 2s infinite linear;
+    @keyframes faixa {
+      0% {
+        background: linear-gradient(45deg, #00000065, #52009681);
+      }
+      50% {
+        background: linear-gradient(90deg, #00000076, #b969fa68);
+      }
+      100% {
+        background: linear-gradient(55deg, #00000094, #52009689);
+      }
+    }
 `;
