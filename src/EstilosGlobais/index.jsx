@@ -12,6 +12,7 @@ body {
   padding: 0;
   background-color: #000;
   color: #fff;
+  box-sizing: border-box;
 }
 main {
   display: block;

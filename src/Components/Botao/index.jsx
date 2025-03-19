@@ -1,11 +1,6 @@
-import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface BotaoProps {
-    children: ReactNode;
-}
-
-export default function Botao({ children }: BotaoProps) {
+export default function Botao({ children }) {
     return (
         <BotaoStyles className="botao">{children}</BotaoStyles>
     )
