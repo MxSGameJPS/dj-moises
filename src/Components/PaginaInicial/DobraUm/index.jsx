@@ -179,6 +179,7 @@ const ContainerTexto = styled.div`
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 10px;
 
     &:hover {
       background: linear-gradient(45deg, #000000, #520096, #000000);

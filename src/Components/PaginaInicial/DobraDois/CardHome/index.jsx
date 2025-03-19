@@ -127,7 +127,7 @@ const StyledWrapper = styled.div`
 
     @media (max-width: 480px) {
         .card {
-            top: 30%;
+            top: 50%;
             width: 140px;
             height: 186px;
         }
