@@ -130,10 +130,14 @@ const StyledWrapper = styled.div`
             top: 50%;
             width: 140px;
             height: 186px;
+            gap: 10px;
         }
 
         .txt {
             font-size: 1.2em;
+        }
+        p {
+          font-size: 12px;
         }
     }
 
