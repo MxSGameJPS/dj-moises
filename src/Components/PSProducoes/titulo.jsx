@@ -51,15 +51,18 @@ const StyledWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 3em;
+    font-size: 20px;
+    text-align: center;
   }
 
   @media (max-width: 480px) {
-    font-size: 2em;  
+    font-size: 15px;
+    text-align: center;  
   }
 
   @media (max-width: 320px) {
-    font-size: 1.5em;  
+    font-size: 10px;
+    text-align: center;  }  
   }  
 `;
 
