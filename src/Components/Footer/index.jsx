@@ -1,32 +1,18 @@
 import styled from "styled-components";
-import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa"; // Ícones do react-icons
+import { FaYoutube , FaWhatsapp , FaInstagram } from "react-icons/fa"; // Ícones do react-icons
 import { Link } from "react-router-dom"; // Para links, se necessário
 
 const Footer = () => {
-  const links = [
-    { link: "#", label: "Contact" },
-    { link: "#", label: "Privacy" },
-    { link: "#", label: "Blog" },
-    { link: "#", label: "Store" },
-    { link: "#", label: "Careers" },
-  ];
-
-  const items = links.map((link) => (
-    <StyledLink
-      key={link.label}
-      href={link.link}
-      onClick={(event) => event.preventDefault()}
-    >
-      {link.label}
-    </StyledLink>
-  ));
-
+  
   return (
     <StyledFooter>
       <StyledInner>
         <img src="/img/Moises com fone.png" alt="" />
 
-        <StyledLinks>{items}</StyledLinks>
+        <StyledLinks>
+          Desenvolvido por Saulo Pavanello
+          <p>(51) 99339-2983</p>
+        </StyledLinks>
 
         <StyledSocialIcons>
           <StyledIcon
@@ -34,14 +20,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTwitter size={18} />
+            <FaYoutube  size={18} />
           </StyledIcon>
           <StyledIcon
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaYoutube size={18} />
+            <FaWhatsapp  size={28} />
           </StyledIcon>
           <StyledIcon
             href="https://instagram.com"
@@ -80,25 +66,7 @@ const StyledInner = styled.div`
 
 const StyledLinks = styled.div`
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  
-`;
-
-const StyledLink = styled.a`
-  color: #868e96;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 5px 10px;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #228be6;
-  }
-
-  
+  flex-direction: column; 
 `;
 
 const StyledSocialIcons = styled.div`
@@ -123,7 +91,7 @@ const StyledIcon = styled.a`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #228be6;
+    background-color: #b822e6;
     color: #fff;
     transform: scale(1.1);
   }
