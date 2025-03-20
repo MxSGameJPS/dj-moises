@@ -73,6 +73,20 @@ const Container = styled.div`
     background-color: #000000;
     padding: 20px;
 
+     /* Animação da faixa */
+     animation: faixa 0.5s infinite linear;
+    @keyframes faixa {
+      0% {
+        background: linear-gradient(45deg, #00000065, #52009681);
+      }
+      50% {
+        background: linear-gradient(90deg, #c60acc76, #05050556, #d621d675);
+      }
+      100% {
+        background: linear-gradient(55deg, #00000094, #52009689);
+      }
+    }
+
     @media (max-width: 768px) {
         padding: 10px;
     }
@@ -227,4 +241,6 @@ const CloseButton = styled.button`
         top: 5px;
         right: 5px;
     }
+
+    
 `;

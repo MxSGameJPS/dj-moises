@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import CardHome from "./CardHome";
+import Loader from "./background";
 
 export default function DobraDois() {
     return (
-        <ContainerDobraDois>
-            <CardHome />
+      <ContainerDobraDois>
+            <CardHome />       
+              <Loader/>
         </ContainerDobraDois>
     );
 }
@@ -24,13 +26,13 @@ const ContainerDobraDois = styled.section`
 
 
      /* Animação da faixa */
-     animation: faixa 2s infinite linear;
+     animation: faixa 0.5s infinite linear;
     @keyframes faixa {
       0% {
         background: linear-gradient(45deg, #00000065, #52009681);
       }
       50% {
-        background: linear-gradient(90deg, #00000076, #b969fa68);
+        background: linear-gradient(90deg, #c60acc76, #05050556, #d621d675);
       }
       100% {
         background: linear-gradient(55deg, #00000094, #52009689);
