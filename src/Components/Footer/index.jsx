@@ -47,6 +47,22 @@ const StyledFooter = styled.div`
   padding: 20px 0;
   text-align: center;
   width: 100%;
+
+  
+  @media (max-width: 768px) { /* Tablets */
+    flex-direction: row; /* Mantém horizontal, mas ajusta espaçamentos */
+    padding: 0 10px;
+  }
+
+  @media (max-width: 480px) { /* Celulares */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+
 `;
 
 const StyledInner = styled.div`
@@ -61,7 +77,27 @@ const StyledInner = styled.div`
 
   
   img {
-    width: 128px;  }
+    width: 128px;  
+  }
+  
+  p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+  }
 `;
 
 const StyledLinks = styled.div`
