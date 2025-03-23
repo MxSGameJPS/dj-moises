@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaYoutube , FaWhatsapp , FaInstagram } from "react-icons/fa"; // Ícones do react-icons
-import { Link } from "react-router-dom"; // Para links, se necessário
+ 
 
 const Footer = () => {
   
