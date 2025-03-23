@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { FaYoutube , FaWhatsapp , FaInstagram } from "react-icons/fa"; // Ícones do react-icons
- 
+import { FaYoutube, FaWhatsapp, FaInstagram } from "react-icons/fa"; // Ícones do react-icons
 
 const Footer = () => {
-  
   return (
     <StyledFooter>
       <StyledInner>
@@ -20,14 +18,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaYoutube  size={18} />
+            <FaYoutube size={18} />
           </StyledIcon>
           <StyledIcon
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaWhatsapp  size={28} />
+            <FaWhatsapp size={28} />
           </StyledIcon>
           <StyledIcon
             href="https://instagram.com"
@@ -48,21 +46,20 @@ const StyledFooter = styled.div`
   text-align: center;
   width: 100%;
 
-  
-  @media (max-width: 768px) { /* Tablets */
+  @media (max-width: 768px) {
+    /* Tablets */
     flex-direction: row; /* Mantém horizontal, mas ajusta espaçamentos */
     padding: 0 10px;
   }
 
-  @media (max-width: 480px) { /* Celulares */
+  @media (max-width: 480px) {
+    /* Celulares */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px 0;
     width: 100%;
   }
-  
-
 `;
 
 const StyledInner = styled.div`
@@ -75,11 +72,10 @@ const StyledInner = styled.div`
   gap: 20px;
   padding: 0 20px;
 
-  
   img {
-    width: 128px;  
+    width: 100px;
   }
-  
+
   p {
     margin-top: 5px;
     font-size: 14px;
@@ -89,29 +85,33 @@ const StyledInner = styled.div`
   @media (max-width: 768px) {
     flex-direction: row;
     padding: 20px;
+    gap: 15px;
   }
 
   @media (max-width: 480px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
-    width: 100%;
+    padding: 15px;
+    gap: 15px;
+
+    img {
+      width: 80px;
+    }
   }
 `;
 
 const StyledLinks = styled.div`
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  text-align: center;
 `;
 
 const StyledSocialIcons = styled.div`
   display: flex;
-  gap: 10px;
-  justify-content: flex-end;
+  gap: 15px;
+  justify-content: center;
   flex-wrap: nowrap;
-
-  
 `;
 
 const StyledIcon = styled.a`
@@ -136,7 +136,6 @@ const StyledIcon = styled.a`
     width: 18px;
     height: 18px;
   }
-
 `;
 
 export default Footer;

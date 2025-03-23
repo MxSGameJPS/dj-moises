@@ -13,7 +13,8 @@ const Nav = () => {
         <li className="icon-content">
           <Link to="/home" data-social="spotify" aria-label="home">
             <div className="filled" />
-            <IoHome size={24} /> {/* Aumentei o tamanho para melhor visibilidade */}
+            <IoHome size={24} />{" "}
+            {/* Aumentei o tamanho para melhor visibilidade */}
           </Link>
           <div className="tooltip">Home</div>
         </li>
@@ -22,14 +23,16 @@ const Nav = () => {
             <div className="filled" />
             <GiPartyPopper size={24} /> {/* Aumentei o tamanho */}
           </Link>
-          <div className="tooltip">Festas</div> {/* Corrigi de "estas" para "Festas" */}
+          <div className="tooltip">Festas</div>{" "}
+          {/* Corrigi de "estas" para "Festas" */}
         </li>
         <li className="icon-content">
           <Link to="/producoes" data-social="pinterest" aria-label="festas">
             <div className="filled" />
             <PiCheers size={24} /> {/* Aumentei o tamanho */}
           </Link>
-          <div className="tooltip">Produções de eventos</div> {/* Corrigi de "estas" para "Festas" */}
+          <div className="tooltip">Produções de eventos</div>{" "}
+          {/* Corrigi de "estas" para "Festas" */}
         </li>
         <li className="icon-content">
           <a
@@ -110,7 +113,8 @@ const StyledWrapper = styled.div`
   }
 
   .example-2 .icon-content a,
-  .example-2 .icon-content Link { /* Adicionado para suportar Link */
+  .example-2 .icon-content Link {
+    /* Adicionado para suportar Link */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -210,28 +214,24 @@ const StyledWrapper = styled.div`
     .example-2 {
       gap: 15px;
       width: 100%;
-      padding: 0;
+      padding: 15px 0;
+      justify-content: center;
     }
     .example-2 .icon-content {
       margin: 0;
     }
     .example-2 .icon-content a,
     .example-2 .icon-content Link {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
     .example-2 .icon-content a svg,
     .example-2 .icon-content Link svg {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
     .example-2 .icon-content .tooltip {
-      top: -25px;
-      font-size: 10px;
-      padding: 3px 6px;
-    }
-    .example-2 .icon-content:hover .tooltip {
-      top: -40px;
+      display: none; /* Ocultamos os tooltips em dispositivos móveis para evitar problemas de usabilidade */
     }
   }
 `;

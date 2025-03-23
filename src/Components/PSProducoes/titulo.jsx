@@ -10,6 +10,12 @@ const Titulo = () => {
 };
 
 const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+
   .shine {
     text-align: center;
     font-size: 4em;
@@ -31,16 +37,15 @@ const StyledWrapper = styled.div`
       transparent 60%,
       transparent 100%
     );
+    -webkit-background-clip: text;
     background-clip: text;
-    background-size: 50px;
-    animation: zezzz;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    -webkit-text-fill-color: transparent;
+    background-size: 200px;
+    animation: shine 10s infinite linear;
   }
-  
-  @keyframes zezzz {
-    0%,
-    10% {
+
+  @keyframes shine {
+    0% {
       background-position: -200px;
     }
     20% {
@@ -51,20 +56,39 @@ const StyledWrapper = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+    .shine {
+      font-size: 3.5em;
+    }
+  }
+
   @media (max-width: 768px) {
-    font-size: 20px;
-    text-align: center;
+    padding: 15px 0;
+
+    .shine {
+      font-size: 2.8em;
+    }
   }
 
   @media (max-width: 480px) {
-    font-size: 15px;
-    text-align: center;  
+    padding: 10px 0;
+
+    .shine {
+      font-size: 2em;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .shine {
+      font-size: 1.7em;
+    }
   }
 
   @media (max-width: 320px) {
-    font-size: 10px;
-    text-align: center;   
-  }  
+    .shine {
+      font-size: 1.5em;
+    }
+  }
 `;
 
 export default Titulo;

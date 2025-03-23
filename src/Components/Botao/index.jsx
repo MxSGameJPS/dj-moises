@@ -11,40 +11,42 @@ export default function Botao({ children, href  }) {
 } 
 
 const BotaoStyles = styled.button`
-    font-size: 26px;
-    width: 500px;
+    font-size: 20px;
+    width: 250px;
     background: linear-gradient(45deg, #7700ff, #000);
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    margin: 20px 0;
 
     &:hover {
-        color: #000;
+        color: #fff;
+        transform: scale(1.05);
+        background: linear-gradient(45deg, #000, #7700ff);
     }
 
     a {
         color: #fff;
         text-decoration: none;
+        display: block;
+        width: 100%;
     }
 
     @media (max-width: 768px) {
-        width: 100%;
-    }
-    @media (max-width: 468px) {
-        width: 100%;
-        font-size: 20px;
-    }
-    @media (max-width: 375px) {
-        width: 100%;
+        width: 230px;
         font-size: 18px;
     }
-    @media (max-width: 768px) {
-        width: 100%;
-    }
-
     
-
+    @media (max-width: 480px) {
+        width: 200px;
+        font-size: 16px;
+    }
+    
+    @media (max-width: 375px) {
+        width: 180px;
+        font-size: 16px;
+    }
 `

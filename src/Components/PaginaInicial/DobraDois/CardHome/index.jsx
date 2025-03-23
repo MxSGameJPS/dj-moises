@@ -38,8 +38,12 @@ const StyledWrapper = styled.div`
   flex-wrap: wrap;
   gap: 90px;
   width: 100%;
+  padding: 50px 0 20px;
 
-  
+  a {
+    text-decoration: none;
+  }
+
   .card {
     position: relative;
     width: 190px;
@@ -51,9 +55,7 @@ const StyledWrapper = styled.div`
     justify-content: center;
     cursor: pointer;
     transition: 0.5s;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
   }
 
   .card:hover {
@@ -114,43 +116,54 @@ const StyledWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-        .card {
-            top: 40%;
-            width: 160px;
-            height: 214px;
-        }
+    padding: 30px 0 10px;
+    gap: 50px;
 
-        .txt {
-            font-size: 1.4em;
-        }
+    .card {
+      width: 160px;
+      height: 214px;
     }
 
-    @media (max-width: 480px) {
-        .card {
-            top: 50%;
-            width: 140px;
-            height: 186px;
-            gap: 10px;
-        }
+    .txt {
+      font-size: 1.4em;
+    }
+  }
 
-        .txt {
-            font-size: 1.2em;
-        }
-        p {
-          font-size: 12px;
-        }
+  @media (max-width: 480px) {
+    gap: 30px;
+    padding: 20px 10px;
+    justify-content: space-around;
+
+    .card {
+      width: 140px;
+      height: 186px;
+      margin: 0;
     }
 
-    @media (max-width: 360px) {
-        .card {
-            top: 25%;
-            width: 120px;
-            height: 162px;
-        }
-        .txt {
-            font-size: 1em;
-        }
+    .txt {
+      font-size: 1.2em;
     }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+
+    .card {
+      width: 160px;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    .txt {
+      font-size: 1.1em;
+    }
+  }
 `;
 
 export default CardHome;

@@ -4,7 +4,10 @@ import Botao from "../../Botao";
 export default function DobraUm() {
   return (
     <ContainerDobraUm>
-      <h1>DJ Moises PS</h1>
+      <ImagemContainer>
+        <h1>DJ Moises PS</h1>
+        <Imagem src="/img/5.png" alt="DJ Moises" />
+      </ImagemContainer>
       <ContainerTexto>
         <p>
           Olá, meu nome é Moises Strottmann, mas sou conhecido como DJ Moises
@@ -18,27 +21,22 @@ export default function DobraUm() {
           público e criando um ambiente de diversão e celebração.
         </p>
         <button>
-            <a target="_blank"
+          <a
+            target="_blank"
             rel="noopener noreferrer"
-            href="https://wa.me/5551991454337">Saiba Mais</a>            
+            href="https://wa.me/5551991454337"
+          >
+            Saiba Mais
+          </a>
         </button>
       </ContainerTexto>
-      <Imagem src="/img/5.png" alt="DJ Moises" />
       <div className="faixa"></div>
     </ContainerDobraUm>
   );
 }
 
-const ContainerDobraUm = styled.div`
+const ImagemContainer = styled.div`
   position: relative;
-  min-height: 500px; /* Garante que o container ocupe a tela inteira */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  overflow: hidden; /* Evita que a imagem vaze */
 
   h1 {
     position: absolute;
@@ -46,10 +44,53 @@ const ContainerDobraUm = styled.div`
     left: 54%;
     font-size: 50px;
     margin-bottom: 20px;
-    color: #fff; /* Branco para contraste com a imagem */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
-    z-index: 2; /* Garante que o título fique acima da imagem */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    h1 {
+      position: static;
+      order: 2;
+      margin-top: -10px;
+      font-size: 24px;
+      left: auto;
+      top: auto;
+    }
+  }
+
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 22px;
+      margin-top: -15px;
+    }
+  }
+`;
+
+const ContainerDobraUm = styled.div`
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
 
   .faixa {
     background-color: rgb(0, 0, 0);
@@ -76,39 +117,25 @@ const ContainerDobraUm = styled.div`
     }
   }
 
-  /* Responsividade para o h1 */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-  }
-
   @media (max-width: 480px) {
-    h1 {
-      top: 20%;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-  }
+    min-height: auto;
+    padding: 10px 10px 30px;
 
-  @media (max-width: 375px) {
-    h1 {
-      top: 15%;
-      left: 30%;
-      font-size: 25px;
+    .faixa {
+      padding: 30px;
+      bottom: -30px;
     }
   }
 `;
 
 const Imagem = styled.img`
   position: absolute;
-  top: 0; /* Começa no topo em telas maiores para dar espaço ao texto */
+  top: 0;
   left: 10%;
   width: 30%;
-  object-fit: cover; /* Cobre o container sem distorcer */
-  z-index: 1; /* Fica atrás do texto */
-  opacity: 0.8; /* Transparência leve em desktop */
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.8;
 
   /* Responsividade */
 
@@ -133,42 +160,42 @@ const Imagem = styled.img`
   }
 
   @media (max-width: 768px) {
-    top: 0%; /* Ajuste leve em tablets para manter a imagem visível */
-    opacity: 0.6; /* Mais transparente em tablets */
-    width: 80%; /* Ajusta a largura para tablets */
+    top: 0%;
+    opacity: 0.6;
+    width: 80%;
     left: -15%;
   }
 
   @media (max-width: 480px) {
-    top: 0; /* Posição original que você gostou em celulares */
-    left: 0;
-    opacity: 0.5; /* Ainda mais transparente em celulares */
-    width: 80%; /* Ajusta a largura para celulares */
+    position: static;
+    width: 60%;
+    opacity: 0.9;
+    order: 1;
+    margin: 0;
   }
 
-  @media (max-width: 320px) {
-    top: 0%; /* Mantém a posição em telas pequenas */
-    opacity: 0.4; /* Máxima transparência em telas pequenas */
+  @media (max-width: 375px) {
+    width: 70%;
   }
 `;
 
 const ContainerTexto = styled.div`
-  position: absolute; /* Remove absolute para fluir com o layout */
+  position: absolute;
   top: 20%;
   left: 40%;
   font-size: 28px;
   width: 50%;
   padding: 20px;
   text-align: left;
-  background-color: rgba(255,255,255, 0.9); /* Fundo branco com transparência */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 2; /* Garante que o texto fique acima da imagem */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  z-index: 2;
+  margin: 0 auto;
 
   p {
-    margin: 0; /* Remove margem padrão do parágrafo */
-    color: #333; /* Cor escura para contraste */
+    margin: 0;
+    color: #333;
   }
 
   button {
@@ -189,42 +216,12 @@ const ContainerTexto = styled.div`
       color: #fff;
       text-decoration: none;
     }
-
-    @media (max-width: 1024px) {
-      font-size: 22px;
-      width: 50%;
-      padding: 20px;
-      left: 30%;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 16px;
-      width: 100%;
-      padding: 10px;
-      left: 5%;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 320px) {
-      font-size: 14px;
-      width: 90%;
-      padding: 8px;
-      left: 5%;
-    }
-
-    @media (max-width: 375px) {
-      font-size: 14px;
-      width: 90%;
-      padding: 8px;
-      left: 5%;
-    }
-
   }
 
   /* Responsividade */
 
   @media (max-width: 1440px) {
-    font-size: 28px;
+    font-size: 26px;
     width: 60%;
     padding: 20px;
     left: 35%;
@@ -234,6 +231,7 @@ const ContainerTexto = styled.div`
     font-size: 24px;
     width: 60%;
     padding: 20px;
+    left: 35%;
   }
 
   @media (max-width: 1024px) {
@@ -244,23 +242,27 @@ const ContainerTexto = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 22px;
-    width: 70%;
+    font-size: 20px;
+    width: 55%;
     padding: 15px;
+    left: 40%;
+    top: 15%;
   }
 
   @media (max-width: 480px) {
-    top: 30%;
-    left: 5%;
+    position: relative;
     font-size: 16px;
-    width: 85%;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.95); /* Fundo mais opaco */
+    width: 90%;
+    padding: 15px;
+    left: auto;
+    top: auto;
+    order: 2;
+    margin: 20px auto 0;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 375px) {
     font-size: 14px;
-    width: 90%;
-    padding: 8px;
+    width: 92%;
+    padding: 10px;
   }
 `;

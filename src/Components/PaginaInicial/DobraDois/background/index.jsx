@@ -21,7 +21,13 @@ const Loader = () => {
 };
 
 const StyledWrapper = styled.div`
-  
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+
   .center {
     height: 0px;
     display: flex;
@@ -85,6 +91,34 @@ const StyledWrapper = styled.div`
 
     100% {
       transform: scale(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    bottom: 15px;
+
+    .wave {
+      width: 5px;
+      height: 40px;
+      margin: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    bottom: 10px;
+
+    .wave {
+      width: 4px;
+      height: 30px;
+      margin: 5px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .wave {
+      width: 3px;
+      height: 25px;
+      margin: 4px;
     }
   }
 `;

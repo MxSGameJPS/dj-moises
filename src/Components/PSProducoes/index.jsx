@@ -16,8 +16,12 @@ export default function PsProducoes() {
           <li>Despedida de Solteiro</li>
         </ul>
       </Div>
-      <Carousel />
-      <Botao href={"https://wa.me/5551991454337"}> Saiba Mais </Botao>
+      <CarouselContainer>
+        <Carousel />
+      </CarouselContainer>
+      <BotaoContainer>
+        <Botao href={"https://wa.me/5551991454337"}> Saiba Mais </Botao>
+      </BotaoContainer>
     </ContainerProducoes>
   );
 }
@@ -28,6 +32,9 @@ const ContainerProducoes = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+
   /* Estiliza todas as dobras (filhos diretos) */
   > * {
     width: 100%;
@@ -41,12 +48,73 @@ const Div = styled.div`
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 100%;
+  margin: 20px 0;
 
   ul {
-    padding: 10px 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
     margin: 10px;
     border-radius: 40px;
-    gap: 10px;
+    gap: 20px;
     font-size: 25px;
+    list-style-type: none;
   }
+
+  li {
+    background: linear-gradient(45deg, #000000, #520096);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #520096, #000000);
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      padding: 5px 10px;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    li {
+      padding: 8px 15px;
+      border-radius: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    ul {
+      padding: 5px;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    li {
+      padding: 7px 12px;
+      border-radius: 12px;
+    }
+  }
+`;
+
+const CarouselContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BotaoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 `;
