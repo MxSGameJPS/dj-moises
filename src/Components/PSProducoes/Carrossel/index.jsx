@@ -39,18 +39,7 @@ export default function Carousel() {
       alt: "Hotel Image 1",
       adjustPosition: false, // Não precisa de ajuste
     },
-    {
-      id: 2,
-      src: "/img_producoes/2.jpeg",
-      alt: "Hotel Image 2",
-      adjustPosition: true, // Precisa de ajuste
-    },
-    {
-      id: 3,
-      src: "/img_producoes/3.jpeg",
-      alt: "Hotel Image 3",
-      adjustPosition: true, // Precisa de ajuste
-    },
+
     {
       id: 4,
       src: "/img_producoes/4.jpeg",
