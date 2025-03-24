@@ -44,7 +44,7 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000000; /* Adiciona fundo preto para combinar com o tema do site */
+  background-color: #0a1929; /* Adiciona fundo azul escuro para combinar com o tema do site */
 `;
 
 const StyledSimpleGrid = styled(SimpleGrid)`

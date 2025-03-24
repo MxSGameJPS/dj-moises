@@ -20,7 +20,8 @@ const StyledWrapper = styled.div`
     text-align: center;
     font-size: 4em;
     font-weight: 900;
-    color: rgba(194, 0, 253, 0.3);
+    color: rgba(194, 0, 253, 0.8);
+    text-shadow:  0 0 1px rgba(255, 255, 255, 0.5);
     background: #222 -webkit-gradient(
         linear,
         left top,
@@ -42,6 +43,20 @@ const StyledWrapper = styled.div`
     -webkit-text-fill-color: transparent;
     background-size: 200px;
     animation: shine 10s infinite linear;
+    position: relative;
+
+    &::before {
+      content: "Ps Producoes e Eventos";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3),
+        0 0 15px rgba(194, 0, 253, 0.5);
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   @keyframes shine {

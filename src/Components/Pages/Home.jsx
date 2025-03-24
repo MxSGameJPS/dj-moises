@@ -15,7 +15,7 @@ const ContainerHome = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #000000; /* Fundo preto para toda a aplicação */
+  background-color: #0a1929; /* Fundo azul escuro profundo para toda a aplicação */
   overflow-x: hidden;
 
   /* Estiliza todas as dobras (filhos diretos) */

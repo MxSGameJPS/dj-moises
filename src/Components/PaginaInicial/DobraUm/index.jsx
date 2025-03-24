@@ -4,21 +4,19 @@ import Botao from "../../Botao";
 export default function DobraUm() {
   return (
     <ContainerDobraUm>
-      <ImagemContainer>
-        <h1>DJ Moises PS</h1>
-        <Imagem src="/img/5.png" alt="DJ Moises" />
-      </ImagemContainer>
+      <h1 className="desktop-title">DJ Moises PS</h1>
+      <Imagem src="/img/5.png" alt="DJ Moises" />
       <ContainerTexto>
         <p>
           Olá, meu nome é Moises Strottmann, mas sou conhecido como DJ Moises
-          PS. Tenho 46 anos e trabalho como DJ e comunicador há mais de 30 anos.
-          Desde meus 15 anos de idade, fui fascinado por música e, através de
-          festas para a escola e para amigos, comecei a trilhar meu caminho no
-          mundo dos DJs. Sou um profissional apaixonado pelo que faço e acredito
-          que a música tem o poder de transformar momentos. Com um estilo
-          musical Open Format, sempre busco a trilha sonora perfeita para
-          garantir que a festa seja inesquecível, sempre conectando-me com o
-          público e criando um ambiente de diversão e celebração.
+          PS. Trabalho como DJ e comunicador há mais de 30 anos. Desde meus 15
+          anos de idade, fui fascinado por música e, através de festas para a
+          escola e para amigos, comecei a trilhar meu caminho no mundo dos DJs.
+          Sou um profissional apaixonado pelo que faço e acredito que a música
+          tem o poder de transformar momentos. Com um estilo musical Open
+          Format, sempre busco a trilha sonora perfeita para garantir que a
+          festa seja inesquecível, sempre conectando-me com o público e criando
+          um ambiente de diversão e celebração.
         </p>
         <button>
           <a
@@ -35,52 +33,6 @@ export default function DobraUm() {
   );
 }
 
-const ImagemContainer = styled.div`
-  position: relative;
-
-  h1 {
-    position: absolute;
-    top: 0%;
-    left: 54%;
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-
-    h1 {
-      position: static;
-      order: 2;
-      margin-top: -10px;
-      font-size: 24px;
-      left: auto;
-      top: auto;
-    }
-  }
-
-  @media (max-width: 375px) {
-    h1 {
-      font-size: 22px;
-      margin-top: -15px;
-    }
-  }
-`;
-
 const ContainerDobraUm = styled.div`
   position: relative;
   min-height: 500px;
@@ -92,8 +44,19 @@ const ContainerDobraUm = styled.div`
   padding: 20px;
   overflow: hidden;
 
+  .desktop-title {
+    position: absolute;
+    top: 0%;
+    left: 54%;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+
   .faixa {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(10, 25, 41);
     width: 100%;
     padding: 40px;
     border-radius: 10px;
@@ -106,20 +69,31 @@ const ContainerDobraUm = styled.div`
     animation: faixa 2s infinite linear;
     @keyframes faixa {
       0% {
-        background: linear-gradient(45deg, #00000065, #52009681);
+        background: linear-gradient(45deg, #0a192965, #1a4d8c81);
       }
       50% {
-        background: linear-gradient(90deg, #00000076, #b969fa68);
+        background: linear-gradient(90deg, #0f2c5076, #3a6fbf68);
       }
       100% {
-        background: linear-gradient(55deg, #00000094, #52009689);
+        background: linear-gradient(55deg, #0a192994, #1a4d8c89);
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .desktop-title {
+      font-size: 30px;
+      margin-bottom: 15px;
     }
   }
 
   @media (max-width: 480px) {
     min-height: auto;
     padding: 10px 10px 30px;
+
+    .desktop-title {
+      display: none;
+    }
 
     .faixa {
       padding: 30px;
@@ -170,12 +144,27 @@ const Imagem = styled.img`
     position: static;
     width: 60%;
     opacity: 0.9;
-    order: 1;
-    margin: 0;
+    margin: 20px auto 0;
+
+    &::after {
+      content: "DJ Moises PS";
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      margin-top: -10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
   }
 
   @media (max-width: 375px) {
     width: 70%;
+
+    &::after {
+      font-size: 22px;
+      margin-top: -15px;
+    }
   }
 `;
 
@@ -199,7 +188,7 @@ const ContainerTexto = styled.div`
   }
 
   button {
-    background: linear-gradient(45deg, #000000, #520096);
+    background: linear-gradient(45deg, #0a1929, #1a4d8c);
     color: #fff;
     border: none;
     padding: 10px;
@@ -209,7 +198,7 @@ const ContainerTexto = styled.div`
     margin-top: 10px;
 
     &:hover {
-      background: linear-gradient(45deg, #000000, #520096, #000000);
+      background: linear-gradient(45deg, #1a4d8c, #0a1929);
     }
 
     a {
@@ -256,7 +245,6 @@ const ContainerTexto = styled.div`
     padding: 15px;
     left: auto;
     top: auto;
-    order: 2;
     margin: 20px auto 0;
   }
 

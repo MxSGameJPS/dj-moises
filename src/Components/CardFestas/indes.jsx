@@ -164,7 +164,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, #000000, #520096);
+  background: linear-gradient(135deg, #0a1929, #1a4d8c);
   padding: 40px 20px;
   animation: ${fadeIn} 0.5s ease-in;
   align-items: center;
@@ -387,12 +387,12 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(10, 25, 41, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: ${fadeIn} 0.3s ease-in;
+  padding: 20px;
 `;
 
 const ModalContent = styled.div`

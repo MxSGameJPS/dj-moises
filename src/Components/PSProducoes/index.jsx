@@ -1,27 +1,29 @@
 import styled from "styled-components";
 import Titulo from "./titulo";
 import Carousel from "./Carrossel";
-import Botao from "../Botao";
 
 export default function PsProducoes() {
   return (
     <ContainerProducoes>
       <Titulo />
       <Div>
-        <ul>
-          <li>Casamento</li>
-          <li>Festa de 15 anos</li>
-          <li>Formaturas</li>
-          <li>Bodas</li>
-          <li>Despedida de Solteiro</li>
-        </ul>
+        <TextoDescritivo>
+          Acabou sua preocupação procura DJ, Som, Iluminação, Imagem,
+          Fotografia, Filmagem, Cerimonial, Decoração ou até o Gerenciamento de
+          todo evento, vamos deixar tudo certo para você ter toda tranquilidade
+          e aproveitar sua festa, como um convidado, na maior diversão.
+        </TextoDescritivo>
+        <ContatoLink
+          href="https://wa.me/5551991454337"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Entre em contato
+        </ContatoLink>
       </Div>
       <CarouselContainer>
         <Carousel />
       </CarouselContainer>
-      <BotaoContainer>
-        <Botao href={"https://wa.me/5551991454337"}> Saiba Mais </Botao>
-      </BotaoContainer>
     </ContainerProducoes>
   );
 }
@@ -49,58 +51,56 @@ const Div = styled.div`
   gap: 20px;
   align-items: center;
   width: 100%;
-  margin: 20px 0;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+`;
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 40px;
-    gap: 20px;
-    font-size: 25px;
-    list-style-type: none;
-  }
-
-  li {
-    background: linear-gradient(45deg, #000000, #520096);
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, background 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-      background: linear-gradient(45deg, #520096, #000000);
-    }
-  }
+const TextoDescritivo = styled.p`
+  font-size: 20px;
+  line-height: 1.5;
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    rgba(10, 25, 41, 0.7),
+    rgba(26, 77, 140, 0.7)
+  );
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  text-align: center;
 
   @media (max-width: 768px) {
-    ul {
-      padding: 5px 10px;
-      gap: 15px;
-      font-size: 20px;
-    }
-
-    li {
-      padding: 8px 15px;
-      border-radius: 15px;
-    }
+    font-size: 18px;
+    padding: 15px;
   }
 
   @media (max-width: 480px) {
-    ul {
-      padding: 5px;
-      gap: 10px;
-      font-size: 16px;
-    }
+    font-size: 16px;
+    padding: 12px;
+  }
+`;
 
-    li {
-      padding: 7px 12px;
-      border-radius: 12px;
-    }
+const ContatoLink = styled.a`
+  display: inline-block;
+  background: linear-gradient(45deg, #0a1929, #1a4d8c);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+
+  &:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #1a4d8c, #0a1929);
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 `;
 
@@ -109,12 +109,4 @@ const CarouselContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const BotaoContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
 `;
